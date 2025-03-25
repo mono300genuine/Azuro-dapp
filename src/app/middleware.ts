@@ -7,7 +7,7 @@ export default async function middleware(req: NextRequest) {
   const unallowedCountries = ['RU', 'CN', 'US', 'TR']; // Add unallowed countries here
 
   if (unallowedCountries.includes(country ?? '')) {
-    return NextResponse.redirect(new URL('/geo-restricted', req.url));
+    return NextResponse.redirect(new URL('/restrict', req.url));
   }
 
   return NextResponse.next();
